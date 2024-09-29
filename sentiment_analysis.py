@@ -1,17 +1,13 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from langchain.prompts import PromptTemplate
 from transformers import pipeline
 
 model = "distilbert-base-uncased-finetuned-sst-2-english" 
 sent_pl = pipeline("sentiment-analysis", model=model)
 
-prompt_temp=PromptTemplate(input_variables=["reviewText"], template="Analyze the sentiment of the following review: {reviewText}")
-
 def analysis(review: str):
     result=sent_pl(review[:512])[0]
     return result['label'], result['score']
-
 
 def graph(sentiments: list):
     labels = ['POSITIVE', 'NEGATIVE']
