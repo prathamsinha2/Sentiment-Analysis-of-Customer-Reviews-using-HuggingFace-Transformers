@@ -56,10 +56,6 @@ python app.py
 - transformers: Hugging Face Transformers for sentiment analysis
 - DistilBERT: Pre-trained model fine-tuned for sentiment classification
 
-## License
-
-[Add your chosen license here]
-
 ## Contributing
 
 Feel free to open issues or submit pull requests with improvements.
